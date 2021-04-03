@@ -12,7 +12,7 @@ def validate_user_input(string):
 
 # prints to screen
 def render(string):
-  print string.replace('1', unichr(0x2588)).replace('0', ' ')
+  print(string.replace('1', chr(0x2588)).replace('0', ' '))
 
 def evolve(pop, rule):
 
@@ -27,7 +27,7 @@ def evolve(pop, rule):
   for y in range(0,len(pop)):
 
     #run on every pattern
-    for x in xrange(0,len(ruleset)):
+    for x in range(0,len(ruleset)):
 
       # get pattern
       pattern = str(bin(x))[2:].zfill(3).replace('0', '2').replace('1', '0').replace('2', '1')
@@ -52,7 +52,7 @@ if validate_user_input(sys.argv[1]):
     time.sleep(0.1)
 
 else:
-  print 'Please enter a rule number between 0 and 255.'
+  print('Please enter a rule number between 0 and 255.')
 
 
 
